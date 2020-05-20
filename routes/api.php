@@ -38,7 +38,7 @@ Route::delete('article/{id}', 'ArticleController@destroy');
 // Branch API
 Route::get('branches', 'BranchesController@index');
 // Route::get('branch/{id}', 'BranchesController@show');
-// Route::post('branch', 'BranchesController@store');
+Route::post('branch', 'BranchesController@store');
 // Route::put('branch', 'BranchesController@store');
 // Route::delete('branch/{id}', 'BranchchesController@destroy');
 
@@ -50,3 +50,5 @@ Route::get('procedures', 'ProceduresController@index');
 
 // Doctor Schedule API
 Route::get('schedules', 'DoctorSchedulesController@index');
+Route::post('schedule', 'DoctorSchedulesController@store');
+// Route::put('schedule/{id}', 'DoctorSchedulesController@update');

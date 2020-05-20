@@ -35,7 +35,19 @@ class DoctorSchedulesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $schedule = new DoctorSchedule;
+
+        // $schedule->id = $request->input('article_id');
+        $schedule->doctor_id = $request->input('doctor_id');
+        $schedule->date_available = $request->input('date_available');
+        $schedule->time_duration = $request->input('time_duration');
+
+        if ($schedule->save()) {
+            return $schedule;
+        }
+
+        // return $request;
+        // return DoctorSchedule::create($request->all());
     }
 
     /**
@@ -69,7 +81,10 @@ class DoctorSchedulesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $article = Article::findOrFail($id);
+        // $article->update($request->all());
+
+        // return $article;
     }
 
     /**
