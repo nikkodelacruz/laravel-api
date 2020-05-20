@@ -35,7 +35,11 @@ class BranchesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $branch = new Branch;
+        $branch->branch_name = $request->input('branch_name');
+        if ($branch->save()) {
+            return $branch;
+        }
     }
 
     /**

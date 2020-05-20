@@ -17,8 +17,8 @@ class CreateDoctorSchedulesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('doctor_id');
-            $table->integer('date_available');
-            $table->date('time_duration');
+            $table->date('date_available');
+            $table->longText('time_duration');
         });
     }
 

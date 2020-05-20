@@ -44,9 +44,11 @@ Route::post('branch', 'BranchesController@store');
 
 // Doctor API
 Route::get('doctors', 'DoctorsController@index');
+Route::post('doctor', 'DoctorsController@store');
 
 // Procedure API
 Route::get('procedures', 'ProceduresController@index');
+Route::post('procedure', 'ProceduresController@store');
 
 // Doctor Schedule API
 Route::get('schedules', 'DoctorSchedulesController@index');

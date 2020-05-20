@@ -35,7 +35,12 @@ class ProceduresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $procedure = new Procedure;
+        $procedure->procedure_name = $request->input('procedure_name');
+        $procedure->duration = $request->input('duration');
+        if ($procedure->save()) {
+            return $procedure;
+        }
     }
 
     /**
