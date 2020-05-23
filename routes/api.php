@@ -22,6 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('articles', 'ArticleController@index');
 // http://laravelapi.local/api/articles
 
+// Latest Article
+Route::get('articles/latest', 'ArticleController@latest');
+
 // Single Article
 Route::get('article/{id}', 'ArticleController@show');
 // http://laravelapi.local/api/article/1

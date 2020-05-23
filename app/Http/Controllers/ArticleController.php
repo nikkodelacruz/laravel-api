@@ -17,12 +17,24 @@ class ArticleController extends Controller
     public function index()
     {
         // Get Articles
-        $articles = Article::paginate(15);
+        $articles = Article::paginate(5);
 
         // return collection of articles as a resource
         return ArticleResource::collection($articles);
         // return Article::all();
 
+    }
+
+    public function latest()
+    {
+        // get only 5 articles and desc by date created
+        $articles = Article::orderBy('created_at', 'desc')->take(5)->get();
+        return ArticleResource::collection($articles);
+    }
+
+    public function all()
+    {
+        // get all artice
     }
 
     /**
@@ -106,5 +118,23 @@ class ArticleController extends Controller
         if ($article->delete()) {
             return new ArticleResource($article);
         }
+    }
+
+    // Pages Controller
+
+    // index
+    public function articles() {
+        $title = 'Articles';
+        // $data = [
+        //  'title' => 'Articles',
+        //  'articles' => ['A1','A2']
+        // ];
+        // with($data);
+        return view('pages.articles.latest')->with('title', $title);
+    }
+
+    // Get all articles
+    public function allArticles() {
+        return view('pages.articles.all');
     }
 }

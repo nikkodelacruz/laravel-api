@@ -14,11 +14,15 @@ class Article extends JsonResource
      */
     public function toArray($request)
     {
-        // return parent::toArray($request);
+        // Method 1: return all columns
+        // return parent::toArray($request); 
+
+        // Method 2: return specific column
         return [
             'id' => $this->id,
             'title' => $this->title,
             'body' => $this->body,
+            'created_at' => $this->created_at->format('M d Y')
         ];
     }
 
