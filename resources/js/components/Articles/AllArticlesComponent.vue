@@ -77,6 +77,7 @@
 					// Add
 					axios
 						.post('/api/article', {
+							id: "",
 							title: this.article.title,
 							body: this.article.body
 							// data: JSON.stringify(this.article),

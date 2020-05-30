@@ -1982,6 +1982,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.edit) {
         // Add
         axios.post('/api/article', {
+          id: "",
           title: this.article.title,
           body: this.article.body // data: JSON.stringify(this.article),
           // headers: {
