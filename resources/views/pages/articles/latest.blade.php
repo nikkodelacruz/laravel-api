@@ -8,7 +8,7 @@
 	        	@if (!empty($title))
 	        		<h1>{{$title}}</h1>
 	        	@endif
-	        	<p>This is the articles page</p>
+	        	<p>This is the articles page.</p>
 	        	<a href="/articles/all" class="btn btn-primary">View All Articles</a>
         	</div>
         </div>
